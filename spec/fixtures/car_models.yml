@@ -1,0 +1,11 @@
+f150:
+  manufacturer: ford
+  name: F-150
+
+mustang:
+  manufacturer: ford
+  name: Mustang
+
+miata:
+  manufacturer: mazda
+  name: Miata
