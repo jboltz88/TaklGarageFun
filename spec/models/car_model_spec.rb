@@ -3,6 +3,7 @@ describe CarModel, type: :model do
 
   it { should be_valid }
   it { should respond_to(:manufacturer) }
+  it { should respond_to(:cars) }
   it { should respond_to(:name) }
 
   it 'requires name to be valid' do
