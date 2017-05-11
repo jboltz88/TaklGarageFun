@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 
+gem 'activeadmin'
+
 group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'faker'
