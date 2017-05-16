@@ -25,6 +25,8 @@ If you want to add non-admin UI, go to town, it is not required. If you want to 
 
 We're fans of simplicity and readability.
 
+If you're super stuck or have questions: feel free to hit us up!
+
 Totally Optional Tasks
 ----------------------
 If you've got the time try out these optional tasks, but don't neglect the main tasks for these:
