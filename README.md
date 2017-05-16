@@ -29,7 +29,7 @@ If you're super stuck or have questions: feel free to hit us up!
 
 Totally Optional Tasks
 ----------------------
-If you've got the time try out these optional tasks, but don't neglect the main tasks for these:
+If you've got the time, try out these optional tasks, but don't neglect the main tasks for these:
 
 * Change the DB over to Postgres
 * Add pricing for a Garage that they charge per space
