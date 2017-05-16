@@ -12,12 +12,15 @@ Tasks
 * Add a year field so I can own a car from 2003, or maybe any year?
 * Add a Garage model that I can store my cars in
 * Make the Garage have a configurable number of spaces and enforce that I can't store too many cars in there.
+* Make sure you have Admin UIs for the major models so I can as an admin create cars, garages, manufacturers, etc...
 
 Tips
 ----
 
 We like automated tests at Takl, so you should use those. There are some examples in this repo, most work fine.
 Don't feel like you must obey whats already in place, if you think theres a better way, go for it.
+
+Order you do these tasks in doesn't matter, that's up to you.
 
 
 Totally Optional Tasks
@@ -26,4 +29,4 @@ If you've got the time try out these optional tasks, but don't neglect the main 
 
 * Change the DB over to Postgres
 * Add pricing for a Garage that they charge per space
-..* Total up how much a user owes per month based off their usage
+ * Total up how much a user owes per month based off their usage and show it on the user show page
