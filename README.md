@@ -24,4 +24,6 @@ Totally Optional Tasks
 ----------------------
 If you've got the time try out these optional tasks, but don't neglect the main tasks for these:
 
-* Change the DB over to Postgres 
+* Change the DB over to Postgres
+* Add pricing for a Garage that they charge per space
+..* Total up how much a user owes per month based off their usage
