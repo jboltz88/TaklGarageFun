@@ -1,10 +1,16 @@
 ActiveAdmin.register Car do
-  permit_params :car_model_id, :vin, :mileage, :color, :year
+  permit_params :car_model_id, :manufacturer_id, :vin, :mileage, :color, :year
+
+  show do
+    attributes_table :car_model, :manufacturer, :vin, :mileage, :color, :year, :created_at, :updated_at
+    active_admin_comments
+  end
 
   index do
     selectable_column
     id_column
     column :car_model
+    column :manufacturer
     column :vin
     column :mileage
     column :color
@@ -14,6 +20,7 @@ ActiveAdmin.register Car do
   end
 
   filter :car_model
+  filter :manufacturer
   filter :vin
   filter :mileage
   filter :color
