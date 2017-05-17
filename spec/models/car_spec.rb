@@ -24,7 +24,7 @@ describe Car, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'require year to be four digits' do
+  it 'requires year to be four digits' do
     subject.year = 200
     expect(subject).to_not be_valid
   end
