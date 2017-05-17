@@ -1,5 +1,5 @@
 ActiveAdmin.register Car do
-  permit_params :car_model, :vin, :mileage, :color
+  permit_params :car_model_id, :vin, :mileage, :color, :year
 
   index do
     selectable_column
@@ -8,6 +8,7 @@ ActiveAdmin.register Car do
     column :vin
     column :mileage
     column :color
+    column :year
     column :created_at
     actions
   end
@@ -16,6 +17,7 @@ ActiveAdmin.register Car do
   filter :vin
   filter :mileage
   filter :color
+  filter :year
   filter :created_at
 
   form do |f|
@@ -23,7 +25,8 @@ ActiveAdmin.register Car do
       f.input :car_model
       f.input :vin
       f.input :mileage
-      f.input :color
+      f.input :color, as: :string
+      f.input :year
     end
     f.actions
   end
