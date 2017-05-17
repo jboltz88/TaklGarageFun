@@ -8,9 +8,11 @@ red_f150:
   vin: 1FMCU0H99DUD21493
   color: red
   mileage: 15
+  year: 2016
 
 white_miata:
   <<: *DEFAULTS
   car_model: miata
   vin: MIATAVIN
   color: white
+  year: 2017
