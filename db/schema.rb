@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170517073912) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
@@ -21,9 +24,9 @@ ActiveRecord::Schema.define(version: 20170517073912) do
     t.integer  "author_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
   create_table "car_models", force: :cascade do |t|
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170517073912) do
     t.string   "name",            null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["manufacturer_id"], name: "index_car_models_on_manufacturer_id"
+    t.index ["manufacturer_id"], name: "index_car_models_on_manufacturer_id", using: :btree
   end
 
   create_table "cars", force: :cascade do |t|
@@ -44,9 +47,9 @@ ActiveRecord::Schema.define(version: 20170517073912) do
     t.integer  "year",                     null: false
     t.integer  "user_id"
     t.integer  "garage_id"
-    t.index ["car_model_id"], name: "index_cars_on_car_model_id"
-    t.index ["garage_id"], name: "index_cars_on_garage_id"
-    t.index ["user_id"], name: "index_cars_on_user_id"
+    t.index ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
+    t.index ["garage_id"], name: "index_cars_on_garage_id", using: :btree
+    t.index ["user_id"], name: "index_cars_on_user_id", using: :btree
   end
 
   create_table "garages", force: :cascade do |t|
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170517073912) do
     t.integer  "price",      default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["user_id"], name: "index_garages_on_user_id"
+    t.index ["user_id"], name: "index_garages_on_user_id", using: :btree
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -79,8 +82,13 @@ ActiveRecord::Schema.define(version: 20170517073912) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "car_models", "manufacturers"
+  add_foreign_key "cars", "car_models"
+  add_foreign_key "cars", "garages"
+  add_foreign_key "cars", "users"
+  add_foreign_key "garages", "users"
 end
