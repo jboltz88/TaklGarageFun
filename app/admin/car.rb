@@ -1,8 +1,8 @@
 ActiveAdmin.register Car do
-  permit_params :car_model_id, :manufacturer_id, :vin, :mileage, :color, :year, :user_id
+  permit_params :car_model_id, :manufacturer_id, :vin, :mileage, :color, :year, :user_id, :garage_id
 
   show do
-    attributes_table :car_model, :manufacturer, :vin, :mileage, :color, :year, :user_id, :created_at, :updated_at
+    attributes_table :car_model, :manufacturer, :vin, :mileage, :color, :year, :user_id, :garage_id, :created_at, :updated_at
     active_admin_comments
   end
 
@@ -16,6 +16,7 @@ ActiveAdmin.register Car do
     column :color
     column :year
     column :user_id
+    column :garage_id
     column :created_at
     actions
   end
@@ -27,6 +28,7 @@ ActiveAdmin.register Car do
   filter :color
   filter :year
   filter :user_id
+  filter :garage_id
   filter :created_at
 
   form do |f|
@@ -37,6 +39,7 @@ ActiveAdmin.register Car do
       f.input :color, as: :string
       f.input :year
       f.input :user_id
+      f.input :garage_id
     end
     f.actions
   end
