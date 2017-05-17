@@ -8,6 +8,7 @@ describe Car, type: :model do
   it { should respond_to(:vin) }
   it { should respond_to(:mileage) }
   it { should respond_to(:year) }
+  it { should respond_to(:user_id) }
 
   it 'requires vin to be valid' do
     subject.vin = nil

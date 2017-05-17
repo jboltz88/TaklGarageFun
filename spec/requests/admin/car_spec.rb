@@ -36,6 +36,11 @@ describe Car, type: :feature do
       subject
       expect(page).to have_content car.year
     end
+
+    it 'displays user id' do
+      subject
+      expect(page).to have_content car.user_id
+    end
   end
 
   describe 'Index page' do
@@ -69,6 +74,11 @@ describe Car, type: :feature do
     it 'displays the year' do
       subject
       expect(page).to have_content car.year
+    end
+
+    it 'displays user id' do
+      subject
+      expect(page).to have_content car.user_id
     end
   end
 end
