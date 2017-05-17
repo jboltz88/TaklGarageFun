@@ -8,4 +8,13 @@ class Car < ApplicationRecord
 
   validates :vin, presence: true
   validates :year, length: { is: 4 }, presence: true
+  validate :validate_garage_capacity
+
+  private
+
+  def validate_garage_capacity
+    return if self.garage.blank?
+    garage = self.garage
+    errors.add(:garage_id, "Exceeds garage capacity") if garage.cars.count >= garage.spaces
+  end
 end
